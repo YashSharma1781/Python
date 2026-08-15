@@ -1,0 +1,14 @@
+{
+    "name" : "harry",
+    "score" : 7.88,
+    "isAdmin" : true,
+    "lisence" : null,
+    "shopitem" : ["apple", "orange", "banana"],
+
+    "myobj" : {
+        "name" : "yash",
+        "marks" : 78
+
+    }
+
+}
