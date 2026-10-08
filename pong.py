@@ -64,6 +64,7 @@ class Paddle:
 
     def move_towards(self, target_y: float, lerp: float, max_speed: float) -> None:
         """AI movement: smoothly chase a target y position."""
+        # hello world i am
         center = self.rect.centery
         delta = (target_y - center) * lerp
         delta = max(-max_speed, min(max_speed, delta))
@@ -74,8 +75,7 @@ class Paddle:
 
     def draw(self, surface: pygame.Surface) -> None:
         pygame.draw.rect(surface, self.color, self.rect, border_radius=6)
-
-
+    # 
 class Particle:
     """Small dissipating particle used for hit / score effects."""
 
@@ -87,9 +87,9 @@ class Particle:
         self.vy = math.sin(angle) * speed
         self.life = 1.0
         self.decay = random.uniform(0.02, 0.05)
-        self.color = color
+        self.color = color 
         self.radius = random.uniform(2, 4)
-
+    
     def update(self) -> None:
         self.x += self.vx
         self.y += self.vy
@@ -444,6 +444,7 @@ class Game:
         elif self.state == GameState.GAME_OVER:
             self.draw_game_over()
         pygame.display.flip()
+       
 
     # ------------------------------main loop ---------------------------------- #
 
@@ -453,7 +454,6 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-
                 if self.state == GameState.MENU:
                     self.handle_menu_input(event)
                 elif self.state == GameState.PLAYING:
@@ -462,7 +462,7 @@ class Game:
                     self.handle_paused_input(event)
                 elif self.state == GameState.GAME_OVER:
                     self.handle_game_over_input(event)
-
+              
             self.update()
             self.draw()
             self.clock.tick(FPS)
